@@ -8,7 +8,7 @@
       <p>
         <img src="@/assets/vue-logo.png">
         <span id="plus">+</span>
-        <img src="@/assets/flask-logo.png">
+        <img src="@/assets/sanic-logo.png">
       </p>
     </div>
     <router-view/>

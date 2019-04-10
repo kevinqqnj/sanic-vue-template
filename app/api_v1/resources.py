@@ -1,38 +1,26 @@
 """
 REST API Resource Routing
-http://flask-restplus.readthedocs.io
 """
 
+from sanic import response
+from sanic.log import logger
+
 from datetime import datetime
-from flask import request
-from flask_restplus import Resource
 
-from .security import require_auth
-from . import api_rest
+from .security import authorized
+from . import api_bp
 
 
-class SecureResource(Resource):
-    """ Calls require_auth decorator on all requests """
-    method_decorators = [require_auth]
+@api_bp.route('/resource/<resource_id:string>')
+async def resouce(request, resource_id):
+    timestamp = datetime.utcnow().isoformat()
+    logger.debug(f'resource_id: {resource_id}')
+    return response.json({'timestamp': timestamp})
 
 
-@api_rest.route('/resource/<string:resource_id>')
-class ResourceOne(Resource):
-    """ Unsecure Resource Class: Inherit from Resource """
-
-    def get(self, resource_id):
-        timestamp = datetime.utcnow().isoformat()
-        return {'timestamp': timestamp}
-
-    def post(self, resource_id):
-        json_payload = request.json
-        return {'timestamp': json_payload}, 201
-
-
-@api_rest.route('/secure-resource/<string:resource_id>')
-class SecureResourceOne(SecureResource):
-    """ Unsecure Resource Class: Inherit from Resource """
-
-    def get(self, resource_id):
-        timestamp = datetime.utcnow().isoformat()
-        return {'timestamp': timestamp}
+@api_bp.route('/resource_sec/<resource_id:string>')
+@authorized()
+async def resouce_secure(request, resource_id):
+    timestamp = datetime.utcnow().isoformat()
+    logger.debug(f'secured resource_id: {resource_id}')
+    return response.json({'timestamp': timestamp})

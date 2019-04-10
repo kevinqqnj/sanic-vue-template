@@ -14,21 +14,22 @@ class Request(_Request):
 
 app = Sanic(__name__, request_class=Request)
 app.config.from_object(config)
-logger.info('>>> Current env: {}'.format(Config.FLASK_ENV))
+logger.info(f'>>> Current env:{Config.SANIC_ENV} DEBUG:{Config.DEBUG}')
 app.static('/static', 'dist/static')
 
 app.register_blueprint(api_bp)
 
 
-# @app.exception(NotFound)
-# async def ignore_404s(request, exception):
-#     return response.text("404. Oops, That page couldn't found.")
+@app.exception(NotFound)
+async def ignore_404s(request, exception):
+    return response.text("404. Oops, That page couldn't found.")
 
 
 async def server_error_handler(request, exception):
     return response.text('Oops, Sanic Server Error! Please contact the blog owner',
                 status=500)
 
+# serve index.html, built by Vue-CLI
 @app.route('/')
 async def handle_request(request):
     return await response.file('dist/index.html')

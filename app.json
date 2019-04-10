@@ -1,17 +1,17 @@
 
 {
-  "name": "Flask VueJs Template",
+  "name": "Sanic VueJs Template",
   "description": "",
-  "repository": "https://github.com/gtalarico/flask-vuejs-template",
-  "logo": "https://github.com/gtalarico/flask-vuejs-template/raw/master/docs/project-logo.png",
-  "keywords": ["flask", "vue"],
+  "repository": "https://github.com/kevinqqnj/sanic-vue-template",
+  "logo": "https://github.com/kevinqqnj/sanic-vue-template/raw/master/docs/sanic-framework-logo.png",
+  "keywords": ["Sanic", "vue"],
   "env": {
-    "FLASK_ENV": {
-      "description": "Flask Enviroment",
+    "sanic_ENV": {
+      "description": "sanic Enviroment",
       "value": "production"
     },
     "SECRET": {
-      "description": "Flask Secret Key",
+      "description": "sanic Secret Key",
       "value": "YourKeyHere"
     }
    },

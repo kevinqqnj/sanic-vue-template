@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 let $axios = axios.create({
-  baseURL: '/v1/api/',
+  baseURL: '/api/v1/',
   timeout: 5000,
   headers: { 'Content-Type': 'application/json' }
 })
@@ -29,7 +29,7 @@ export default {
   },
 
   fetchSecureResource () {
-    return $axios.get(`secure-resource/zzz`)
+    return $axios.get(`resource_sec/zzz`)
       .then(response => response.data)
   }
 }

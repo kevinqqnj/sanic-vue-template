@@ -9,10 +9,10 @@ import os
 
 class Config(object):
     # If not set fall back to production for safety
-    FLASK_ENV =  os.getenv('FLASK_ENV', 'production')
+    SANIC_ENV =  os.getenv('SANIC_ENV', 'production')
     DEBUG = bool(os.getenv('DEBUG', False))
-    # Set FLASK_SECRET on your production Environment
-    SECRET_KEY = os.getenv('FLASK_SECRET', 'Secret')
+    # Set SANIC_SECRET on your production Environment
+    SECRET_KEY = os.getenv('SANIC_SECRET', 'Secret')
 
     APP_DIR = os.path.dirname(__file__)
     ROOT_DIR = os.path.dirname(APP_DIR)
