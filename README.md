@@ -1,4 +1,4 @@
-#Sanic + Vue.js + Webpack Web Application Template
+# Sanic + Vue.js + Webpack Web Application Template
 
 ## Features
 * Minimal Sanic 19.3 App
@@ -141,8 +141,8 @@ Here are the commands we need to run to get things setup on the Heroku side:
 	$ git push heroku
 	```
 
-#### advanced template
-Below features are considered in `sanic-vue-template-advanced`:
+## Advanced Template
+Below features are considered in `sanic-vue-template-advanced` (release date: TBD):
 * admin dashboard
 * database: asyncpg + peewee
 * aioredis/cache
@@ -154,5 +154,3 @@ Below features are considered in `sanic-vue-template-advanced`:
 * sanic-zipkin
 * arq: async job queue
 * aiofiles
-
-release date: TBD

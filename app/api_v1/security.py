@@ -8,7 +8,7 @@ from functools import wraps
 def check_request_for_authorization_status(request):
     # Verify if User is Authenticated
     # Authentication logic goes here, for instance cookie, session.
-    flag = False
+    flag = request.headers.get('Authorization') == 'Correct Token'
     logger.debug(f'authorization_status: {flag} for {request}')
     return flag
 
@@ -24,7 +24,7 @@ def authorized():
             if is_authorized:
                 # the user is authorized.
                 # run the handler method and return the response
-                response = await f(request, *args, **kwargs)
+                response = await f(None, request, *args, **kwargs)
                 return response
             else:
                 # the user is not authorized.
