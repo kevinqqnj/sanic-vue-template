@@ -13,6 +13,8 @@ _inspired by https://github.com/gtalarico/flask-vuejs-template_
 ## Demo
 [Live Demo](https://sanic-vue-template.herokuapp.com/#/api)
 
+![](https://upload-images.jianshu.io/upload_images/3843091-9be16d085dfc7d22.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/565/format/webp)
+
 ## Template Structure
 
 The template uses Sanic to create a minimal REST style API, and let's VueJs + vue-cli handle the front end and asset pipline.
@@ -148,9 +150,10 @@ Below features are considered in `sanic-vue-template-advanced` (release date: TB
 * aioredis/cache
 * Sanic-Auth
 * sanic-session
-* aiojobs
+* aiotask_context
 * sanic-sentry
 * sanic-jwt
 * sanic-zipkin
 * arq: async job queue
 * aiofiles
+* ...
