@@ -1,7 +1,7 @@
 """
-Global Flask Application Setting
+Global Sanic Application Setting
 
-See `.flaskenv` for default settings.
+See `.env` for default settings.
  """
 
 import os
